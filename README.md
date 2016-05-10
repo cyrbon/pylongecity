@@ -81,13 +81,18 @@ No way to invalidate cache if the last page gets updated with a new post after i
 
 ### Installation
 
+Due to `typing`, it needs python >= 3.5.
+
 ##### Either using pip:
 
 `pip install pylongecity`
 
+You'll also need to have `joblib`, `pyquery` and `requests2`.
+
 ##### Or using the [Nix package manager](https://nixos.org/nix/):
 
-Nix works **only on linux or mac**. It allows you to create fully reproducible environments (in fact, fully reproducible OSes) and makes package management a breeze of fresh air. Usually, it "just works". **If you don't already have the nix package manager, you can install it using**:
+Nix currently works **only on linux or mac**. It allows you to create fully reproducible environments (in fact, fully reproducible OSes) 
+and makes package management a breeze of fresh air. Usually, it "just works". **If you don't already have the nix package manager, you can install it using**:
 
 `curl https://nixos.org/nix/install | sh`
 
@@ -111,7 +116,3 @@ If you don't want `ipython`, then you can just run:
 To install it into a global environment:
 
 `nix-env -iA nixpkgs.python35Packages.pylongecity`
-
-To use a specific version of python replace `python35Packages` with `python{$version}Packages`,
-like `python34Packages` for python 3.4 or`python33Packages` for python 3.3.
-Multiple versions of packages can coexist together peacefully in different "nix-shells".
