@@ -83,7 +83,7 @@ No way to invalidate cache if the last page gets updated with a new post after i
 
 Due to `typing`, it needs python >= 3.5.
 
-##### Either using pip:
+##### You can install it either using pip:
 
 `pip install pylongecity`
 
@@ -91,20 +91,9 @@ You'll also need to have `joblib`, `pyquery` and `requests2`.
 
 ##### Or using the [Nix package manager](https://nixos.org/nix/):
 
-Nix currently works **only on linux or mac**. It allows you to create fully reproducible environments (in fact, fully reproducible OSes) 
-and makes package management a breeze of fresh air. Usually, it "just works". **If you don't already have the nix package manager, you can install it using**:
+If nix is not installed, [look here for as quick guide.](#nix-installation-if-needed)
 
-`curl https://nixos.org/nix/install | sh`
-
-Then, create an alias to use it: 
-
-`alias nix='. ~/.nix-profile/etc/profile.d/nix.sh'`
-
-Run the `nix` alias, if you haven't already. 
-`nix` makes commands like `nix-shell` and `nix-env` available.
-Now we  can drop into the environment with *pylongecity*, *ipython* and *jupyter* (*ipython notebook*).
-
-**Once nix is installed:**
+###### Once nix is installed
 
 The package is not yet available on nixpkgs, so you will have to
 download an expression (`default.nix`) from this repo
@@ -115,10 +104,26 @@ Then just run:
 
 `nix-shell default.nix`
 
-And it will drop you into the environment with pylongecity and ipython. That's it, it's ready to be used.
+That's it! It's ready to be used and it should drop you into the environment with pylongecity and ipython.
 
-##### Extras packages
+##### Extra packages
 
-If you want extra packages in the environment, you can add them into `default.nix`. At the bottom you'll see the line with the list where other packages can be put:
+If you want extra packages in the environment, you can add them in `default.nix`. At the bottom you'll see the line with 
+the list where other packages can be put:
 
-`[ pylongecity ipykernel ];`, 
+`[ pylongecity ipykernel ];`
+
+##### Nix installation, if needed
+
+Nix currently works **only on linux or mac**. It allows you to create fully reproducible environments or OSes 
+and makes package management a breeze of fresh air. Usually, it "just works". **If you don't already have the nix package manager, you can install it using**:
+
+`curl https://nixos.org/nix/install | sh`
+
+Then, create an alias to use it: 
+
+`alias nix='. ~/.nix-profile/etc/profile.d/nix.sh'`
+
+Run the `nix` alias, if you haven't already. 
+`nix` makes commands like `nix-shell` and `nix-env` available.
+Now we  can drop into the environment with *pylongecity* and  *ipython*.
