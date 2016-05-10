@@ -91,7 +91,7 @@ You'll also need to have `joblib`, `pyquery` and `requests2`.
 
 ##### Or using the [Nix package manager](https://nixos.org/nix/):
 
-If nix is not installed, [look here for as quick guide.](#nix-installation-if-needed)
+If nix is not installed, [look here for a quick guide.](https://github.com/cyrbon/pylongecity#nix-installation-if-needed)
 
 ###### Once nix is installed
 
