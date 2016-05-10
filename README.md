@@ -2,7 +2,7 @@
 ### A simple python script to quickly search longecity threads for relevant information
 
 
-While being very simple, it's still concurrent and uses disk-persistent caching to download each page only once. It was written very quickly, did not undergo any serious testing and is not indended for anything besides personal use.
+While being very simple, it's still concurrent and uses disk-persistent caching to download each page only once.
 
 
 The typical use case is finding and filtering posts by phrases or words, authors, date, rating, links (e.g., references to pubmed) or any combination of the above. The `render` method takes a list of posts and shows them in a browser, where it's easier to read. If you want to get the most of it, you probably want to use an interactive shell like `ipython`
@@ -104,15 +104,21 @@ Run the `nix` alias, if you haven't already.
 `nix` makes commands like `nix-shell` and `nix-env` available.
 Now we  can drop into the environment with *pylongecity*, *ipython* and *jupyter* (*ipython notebook*).
 
-**Once nix is installed and available run:**
+**Once nix is installed:**
 
-`nix-shell -p 'with python35Packages; [pylongecity ipykernel]'`
+The package is not yet available on nixpkgs, so you will have to
+download an expression (`default.nix`) from this repo
 
-The above will drop you into a virtual environment with pylongecity and ipython.
-If you don't want `ipython`, then you can just run:
+`wget https://raw.githubusercontent.com/cyrbon/pylongecity/master/default.nix`
 
-`nix-shell -p 'python35Packages.pylongecity'`
+Then just run:
 
-To install it into a global environment:
+`nix-shell default.nix`
 
-`nix-env -iA nixpkgs.python35Packages.pylongecity`
+And it will drop you into the environment with pylongecity and ipython. That's it, it's ready to be used.
+
+##### Extras packages
+
+If you want extra packages in the environment, you can add them into `default.nix`. At the bottom you'll see the line with the list where other packages can be put:
+
+`[ pylongecity ipykernel ];`, 
